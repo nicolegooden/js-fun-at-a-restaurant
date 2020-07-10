@@ -1,11 +1,12 @@
 function takeOrder(order, deliveryOrders) {
   if (deliveryOrders.length < 3) {
-  deliveryOrders.push(order);
+    deliveryOrders.push(order);
   }
 }
 
 function refundOrder(order, deliveryOrders) {
-  deliveryOrders.shift(order);
+  var i = order;
+  deliveryOrders.splice([i - 1], 1);
 }
 
 //Pseudocode for test file:
@@ -29,7 +30,7 @@ function listItems(deliveryOrders) {
   for (i = 0; i < deliveryOrders.length; i++) {
     allItems += deliveryOrders[i].item;
     if ([i] < 2) {
-    allItems += ", ";
+      allItems += ", ";
     }
   }
   return allItems;
